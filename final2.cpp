@@ -1,11 +1,12 @@
 #include<stdio.h>
+#include<windows.h>
 struct process
 {                                    //tt->turn-around time
-	char name;						//at->arrival time
-	int at,bt,wt,tt,rt;				//bt->burst time
-	int completed;					//wt->waiting time									
-									//rt->remaining time
-}p[10],temp;						//n->no of processes
+	char name;		     //at->arrival time
+	int at,bt,wt,tt,rt;	     //bt->burst time
+	int completed;		     //wt->waiting time									
+				     //rt->remaining time
+}p[10],temp;			     //n->no of processes
 									
 int n;
 int q[10];  //queue
@@ -73,7 +74,7 @@ int main()
 		{
 		
 			 if(p[j].at==p[j-1].at)
-			{								//sorting according to burst time so first sorted job will execute
+			{				//sorting according to burst time so first sorted job will execute
 				if(p[j].bt<p[j-1].bt)                  
 				{
 					temp=p[j-1];
@@ -96,7 +97,7 @@ int main()
         i=dequeue();
         if(p[i].rt<=tq)
         {                          /* for processes having remaining time with less than or  equal  to time quantum  */
-                              
+            Sleep(1000*tq);                 
             time+=p[i].rt;
             p[i].rt=0;
             p[i].completed=1;         
