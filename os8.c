@@ -113,7 +113,7 @@ int main()
             }
         }
         else               // more than time quantum
-        {
+        {   Sleep(1000*tq);
             time+=tq;
             p[i].rt-=tq;
             printf(" %c ",p[i].name);
