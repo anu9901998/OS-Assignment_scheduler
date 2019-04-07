@@ -97,7 +97,7 @@ int main()
         i=dequeue();
         if(p[i].rt<=tq)
         {                          /* for processes having remaining time with less than or  equal  to time quantum  */
-            Sleep(1000*tq);                 
+                             
             time+=p[i].rt;
             p[i].rt=0;
             p[i].completed=1;         
@@ -113,7 +113,7 @@ int main()
             }
         }
         else               // more than time quantum
-        {
+        {   Sleep(1000*tq);
             time+=tq;
             p[i].rt-=tq;
             printf(" %c ",p[i].name);
