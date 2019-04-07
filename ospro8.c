@@ -88,7 +88,7 @@ int main()
 	{
 		p[i].rt=p[i].bt;
 	}
-    printf("\nEnter the time unit after which CPU preemt:");
+    printf("\nEnter the time unit after which CPU preemt(must take 10):");
     scanf("%d",&tq);
     enqueue(0);          // enqueue the first process
     printf("Process execution order: ");
